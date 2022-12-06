@@ -1,0 +1,52 @@
+/* Set font to better looking */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+#container {
+    max-width: 600px;
+    margin: auto;
+}
+
+#files-container {
+    padding: 8px 0px;
+}
+
+.file-container {
+    /* Grid of three columns */
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-gap: 10px;
+    
+    max-width: 600px;
+    margin: 0 auto;
+    
+    padding: 0 15px;
+}
+
+.download-button, .convert-button, .delete-button {
+    text-align: center;
+    max-width: 128px;
+}
+
+/* .download-button {
+    
+} */
+
+/* .convert-button {
+    
+} */
+
+.delete-button {
+    max-width: 64px;
+}
+
+#upload-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
