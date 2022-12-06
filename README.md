@@ -19,3 +19,6 @@ docker build -t excel2csv:1.0 .
 docker run --name excel2csv -d -p 80:80 excel2csv:1.0
 docker exec -it excel2csv sh
 ```
+
+## Serve PHP server
+Install [XAMPP](https://www.apachefriends.org/) and add PHP folder to path (`C:/xampp/php`). After that run the command `php -S localhost:80`.
