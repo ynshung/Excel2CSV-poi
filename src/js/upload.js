@@ -12,6 +12,11 @@ form.addEventListener("submit", (e) => {
     for (let i = 0; i < files.length; i++) {
         let file = files[i];
 
+        if (!file.name.match(/\.(xls|xlsx)$/)) {
+            alert(`File "${file.name}" is not a valid Excel file. Please try again.`);
+            return;
+        }
+
         formData.append("files[]", file);
     }
 
