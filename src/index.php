@@ -14,7 +14,7 @@
             <br/>
             <!-- Excel File input -->
             <form method="post" enctype="multipart/form-data" id="upload-form">
-                <label for="file">Select an Excel file to upload:</label><br/>
+                <label for="file">Select one or more Excel file(s) to upload:</label><br/>
                 <input type="file" name="files[]" id="file" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" multiple />
                 <input type="submit" name="submit" value="Upload" />
             </form>
