@@ -117,7 +117,7 @@ body {
     background-color: rgb(249, 188, 96);
 }
 
-.convert-button {
+.main-convert-button {
     display: flex;
     justify-content: center;
     font-family: 'Blinker', sans-serif;                                         
@@ -143,12 +143,12 @@ body {
 
 /* Center convert button on small screen */
 @media screen and (max-width: 1200px) {
-    .convert-button {
+    .main-convert-button {
         margin-left: 0;
     }
 }
 
-.convert-button:hover {
+.main-convert-button:hover {
     box-shadow: 10px 10px 35px rgba(0, 0, 0, 0.3);
     background-color: rgb(0, 30, 29);
     color: white;  

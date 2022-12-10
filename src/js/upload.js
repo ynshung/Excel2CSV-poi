@@ -40,14 +40,15 @@ function handleDrop(e) {
     handleFiles(files);
 }
 
-// Implement the file upload functionality
-
-// Button show upload dialog, id: file
 const input = document.getElementById("file");
 input.addEventListener("change", (e) => {
     handleFiles(e.target.files);
 });
 
+const input2 = document.getElementById("file2");
+input2.addEventListener("change", (e) => {
+    handleFiles(e.target.files);
+});
 
 function handleFiles(files) {
     files = [...files];
@@ -82,6 +83,11 @@ function submitFiles(files) {
         body: formData,
     }).then((response) => {
         console.log(response);
-        // location.reload();
+        
+        if (response.status === 200) {
+            document.getElementById("no-file-upload").style.display = "none";
+            document.getElementById("contains-files").style.display = "flex";
+            document.getElementById("sidebar").style.display = "flex";
+        }
     });
 };

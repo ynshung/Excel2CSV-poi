@@ -4,7 +4,9 @@
 .rect-info,
 .upload-info,
 .upload-button,
-.upload-bottom {
+.upload-bottom,
+.upload-files,
+#no-file-upload {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,13 +30,19 @@
 }
 
 .smallrect {
-    width: 790px;
-    height: 390px;
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(297.76deg, #75C9B7 0%, #ABD699 100%);
     border-radius: 6px;
+    transition : box-shadow 0.15s;
+}
+
+.upload-files {
+    width: 790px;
+    height: 390px;
+}
+
+#no-file-upload {
     flex-direction: column;
     gap: 10px;
-    transition : box-shadow 0.15s;
 }
 
 .excel-icon {

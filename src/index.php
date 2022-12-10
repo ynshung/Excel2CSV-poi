@@ -7,9 +7,9 @@
     <title>CAT201 Assignment 1</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@200;300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="styles/style.css" /> -->
     <link rel="stylesheet" href="styles/home-page.css">
     <link rel="stylesheet" href="styles/upload.css">
+    <link rel="stylesheet" href="styles/listfile.css">
 
     <script src="https://kit.fontawesome.com/2673427424.js" crossorigin="anonymous"></script>
 </head>
@@ -29,41 +29,110 @@
                 <p class="csv">.CSV</p>
             </div>
             <div class="button">
-                <a class="convert-button" href="#upload">Convert</a>
+                <a class="main-convert-button" href="#upload">Convert</a>
             </div>
         </div>
     </div>
 
     <div class="center-border" id="upload">
         <div class="rectangle">
-            <!-- Drag and drop -->
-            <div class="smallrect" id="drop-area">
-                <div class="rect-info">
-                    <img class="excel-icon" src="icon/excel.png">
-                    <img class="arrow-icon" src="icon/arrow.png">
-                    <img class="csv-icon" src="icon/csv1.png">
+            <div class="smallrect">
+                <div class="upload-files" id="drop-area">
+
+                    <div id="no-file-upload" style="display: flex;">
+                        <div class="rect-info">
+                            <img class="excel-icon" src="icon/excel.png">
+                            <img class="arrow-icon" src="icon/arrow.png">
+                            <img class="csv-icon" src="icon/csv1.png">
+                        </div>
+
+                        <div class="upload-info">
+                            <input type="file" name="files[]" id="file" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" multiple />
+                            <label for="file" class="upload-button">
+                                <span id="upload-file" style="display: flex;">
+                                    <img class="file-icon" src="icon/file.png" width="24px">
+                                    <span>UPLOAD FILE</span>
+                                    <img class="arrowdown-icon" src="icon/arrow-down.png" width="21px">
+                                </span>
+                                <span id="upload-loading" style="display: none;">
+                                    <i class="fa-solid fa-circle-notch loading" id="rotating"></i>
+                                    <span>UPLOADING...</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="upload-bottom">
+                            <p class="upload-words">
+                                or drop Excel files here
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="contains-files" style="display: none">
+                        <!-- The grid container -->
+                        <div class="grid">
+
+                            <!-- The grid items -->
+                            <div class="grid-item">
+                                <div class="file-border">
+
+                                    <button class="delete-file-icon">
+                                        <img class="cross-icon" src="icon/cross.png" width="20px">
+                                    </button>
+
+                                    <div class="file">
+                                        <img class="excel-file1" src="icon/excel.png" width="40px">
+                                    </div>
+
+                                    <div class="file-info">
+                                        <p class="file-name">
+                                            CAT201_Assignment.xlsx
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="file" name="files[]" id="file2" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" multiple />
+                        <label for="file2">
+                            <div class="add-button">
+                                <img class="add-icon" src="icon/add.png" width="40px">
+                            </div>
+                        </label>
+                    </div>
+
                 </div>
 
-                <div class="upload-info">
-                    <input type="file" name="files[]" id="file" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" multiple />
-                    <label for="file" class="upload-button">
-                        <span id="upload-file" style="display: flex;">
-                            <img class="file-icon" src="icon/file.png" width="24px">
-                            <span>UPLOAD FILE</span>
-                            <img class="arrowdown-icon" src="icon/arrow-down.png" width="21px">
-                        </span>
-                        <span id="upload-loading" style="display: none;">
-                            <!-- Use font awesome -->
-                            <i class="fa-solid fa-circle-notch loading" id="rotating"></i>
-                            <span>UPLOADING...</span>
-                        </span>
-                    </label>
-                </div>
 
-                <div class="upload-bottom">
-                    <p class="upload-words">
-                        or drop Excel files here
-                    </p>
+                <div class="right-section" id="sidebar" style="display: none">
+                    <img class="excel-file1" src="icon/excel.png" width="60px">
+                    <div class="file-info">
+                        <p class="file-name-rs">
+                            CAT201_Assignment.xlsx
+                        </p>
+                    </div>
+
+                    <div class="convert-info">
+                        <button class="convert-button">
+                            CONVERT TO .CSV
+                            <img class="arrowcircle-icon" src="icon/arrowcircle.png" width="14px">
+                        </button>
+                    </div>
+
+                    <div class="download">
+                        <button class="download-button">
+                                <i class="fa-solid fa-download"></i>
+                                DOWNLOAD
+                            </button>
+                    </div>
+
+
+                    <div class="convert-info">
+                        <button class="convert-button">
+                            CONVERT ALL
+                            <img class="arrowcircle-icon" src="icon/arrowcircle.png" width="14px">
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
