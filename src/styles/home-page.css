@@ -174,3 +174,57 @@ body {
     color: white;
     text-align: center;
 }
+
+.member-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 30px;
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.15s;
+}
+
+.member-info:hover {
+    transform: scale(1.05);
+}
+
+.pfp {
+    height: 250px;
+    width: 210px;
+    object-fit: contain;
+    background-color: rgb(217, 217, 217);
+    border-radius: 10px;
+    padding-top: 10px;
+    box-shadow: 10px 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+.member-name {
+    font-family: 'Blinker', sans-serif;                                         
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.member-matric-num {
+    font-family: 'Blinker', sans-serif;                                         
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+}
+
+.last-section {
+    margin-bottom: 100px;
+}
