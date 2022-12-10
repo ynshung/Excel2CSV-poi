@@ -47,10 +47,15 @@
                 <div class="upload-info">
                     <input type="file" name="files[]" id="file" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" multiple />
                     <label for="file" class="upload-button">
-                        <span id="upload-file">
+                        <span id="upload-file" style="display: flex;">
                             <img class="file-icon" src="icon/file.png" width="24px">
                             <span>UPLOAD FILE</span>
                             <img class="arrowdown-icon" src="icon/arrow-down.png" width="21px">
+                        </span>
+                        <span id="upload-loading" style="display: none;">
+                            <!-- Use font awesome -->
+                            <i class="fa-solid fa-circle-notch loading" id="rotating"></i>
+                            <span>UPLOADING...</span>
                         </span>
                     </label>
                 </div>

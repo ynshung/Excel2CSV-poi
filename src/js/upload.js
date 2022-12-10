@@ -57,6 +57,9 @@ function handleFiles(files) {
 
 
 function submitFiles(files) {
+    document.getElementById("upload-file").style.display = "none";
+    document.getElementById("upload-loading").style.display = "flex";
+
     const formData = new FormData();
 
     for (let i = 0; i < files.length; i++) {
@@ -66,6 +69,8 @@ function submitFiles(files) {
             alert(
                 `File "${file.name}" is not a valid Excel file. Please try again.`
             );
+            document.getElementById("upload-file").style.display = "flex";
+            document.getElementById("upload-loading").style.display = "none";
             return;
         }
 
