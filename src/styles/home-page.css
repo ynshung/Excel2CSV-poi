@@ -1,0 +1,136 @@
+/* Upload font bitsumishi.ttf */
+@font-face {
+    font-family: Bitsumishi;
+    src: url(bitsumishi.ttf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Blinker, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.background {
+    background-color: rgb(0, 70, 67);
+}
+
+.first-section {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    font-family: Bitsumishi, Arial, sans-serif;
+    color: white;
+    font-size: 12vw;
+    transform:rotate(-4deg);
+    height: 350px;
+}
+
+.excel {
+    margin:0;
+}
+
+.fa-arrow-turn-down {
+    margin-left: 40px;
+    margin-bottom: 20px;
+    font-size: 50px;
+
+}
+
+/* .big-circle {
+    display: flex;
+    justify-content: end;
+    height: 228px;
+    width: 228px;
+    background-color: rgb(171, 209, 198);
+    border-radius: 50%;
+} */
+
+.second-section {
+    background-color: rgb(249, 188, 96);
+    transform: skewY(-4deg);
+    height: 350px;
+}
+
+.title {
+    background-color: rgb(249, 188, 96);
+    display: flex;
+    justify-content: center;
+    font-family: 'Bitsumishi', Arial;
+    color: rgb(0, 30, 29);
+}
+
+.csv {
+    /* font-size: 200px; */
+    font-size: 15vw;
+    margin-left: 500px;
+    margin-top: -30px;
+    transform: skewY(4deg) rotate(-4deg); 
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.convert-button {
+    display: flex;
+    justify-content: center;
+    font-family: 'Blinker', sans-serif;                                         
+    font-size: 30px;
+    font-weight: 600;
+    background-color:white;
+    color: rgb(0, 30, 29);
+    border: none;
+    border-radius: 50px;
+    width: 200px;
+    padding: 10px;
+    box-shadow: 10px 10px 35px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.15s;
+    margin-left: 900px;
+    transform: skewY(4deg); 
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    text-decoration: none;
+
+    position: relative;
+    top: -12vw;
+}
+
+/* Center convert button on small screen */
+@media screen and (max-width: 1200px) {
+    .convert-button {
+        margin-left: 0;
+    }
+}
+
+.convert-button:hover {
+    box-shadow: 10px 10px 35px rgba(0, 0, 0, 0.3);
+    background-color: rgb(0, 30, 29);
+    color: white;  
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 30px;
+    margin-top: 100px;
+}
+
+.pfp {
+    height: 280px;
+    width: 265px;
+    object-fit: contain;
+}
+.member-name {
+    font-family: 'Blinker', sans-serif;                                         
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+}
