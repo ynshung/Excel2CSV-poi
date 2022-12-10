@@ -209,7 +209,7 @@ function noFileSelected() {
     document.getElementById("download").style.display = "none";
     document.getElementById("convert-single").style.display = "none";
 
-    document.getElementById("filename-sidebar").innerHTML = "No file selected!";
+    document.getElementById("filename-sidebar").innerHTML = "No file selected!<br/><br/>You can drag and drop more file at the left.";
     document.getElementById("sidebar-excel").style.display = "none";
     document.getElementById("sidebar-csv").style.display = "none";
 }
@@ -222,7 +222,7 @@ function convertCSV() {
     formData.append("file", fileName);
 
     document.getElementById("convert-text").style.display = "none";
-    document.getElementById("converting").style.display = "flex";
+    document.getElementById("converting-id").style.display = "flex";
 
     // Disable button
     document.getElementById("convert-button-id").disabled = true;
@@ -243,7 +243,7 @@ function convertCSV() {
                 if (document.getElementById("filename-sidebar").innerHTML === fileName) {
                     selectFile(newFileName);
                     document.getElementById("convert-text").style.display = "block";
-                    document.getElementById("converting").style.display = "none";
+                    document.getElementById("converting-id").style.display = "none";
                 }
             });
         }
@@ -257,9 +257,11 @@ function convertCSV() {
 function convertAll() {
     const fileElements = document.querySelectorAll(".file-border");
     let allConverted = true;
+    let totalExcel = 0;
     fileElements.forEach((fileElement) => {
         if (fileElement.dataset.file.match(/\.(xls|xlsx)$/)) {
             allConverted = false;
+            totalExcel++;
         }
     });
 
@@ -281,7 +283,7 @@ function convertAll() {
 
     // convert-all-progress
     let converted = 0;
-    document.getElementById("convert-all-progress").innerHTML = `0/${fileElements.length}`;
+    document.getElementById("convert-all-progress").innerHTML = `0/${totalExcel}`;
 
     const fetchReq = (fileName) => {
         const formData = new FormData();
@@ -292,7 +294,7 @@ function convertAll() {
             body: formData,
         }).then((response) => {
             converted++;
-            document.getElementById("convert-all-progress").innerHTML = `${converted}/${fileElements.length}`;
+            document.getElementById("convert-all-progress").innerHTML = `${converted}/${totalExcel}`;
 
             if (response.status !== 200) {
                 alert("There was an error converting your file. Please check the console for more information.");
