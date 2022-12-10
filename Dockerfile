@@ -4,7 +4,6 @@ WORKDIR /var/www/html
 RUN apt update
 RUN apt install default-jre -y
 
-COPY src/index.php index.php
 COPY src/ .
 
 RUN chmod -R 777 *
