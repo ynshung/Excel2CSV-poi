@@ -69,12 +69,29 @@
                     </div>
 
                     <div id="contains-files" style="display: none">
-                        <!-- The grid container -->
-                        <div class="grid">
+                        <div class="grid" id="files-container">
 
-                            <!-- The grid items -->
                             <div class="grid-item">
                                 <div class="file-border">
+
+                                    <button class="delete-file-icon">
+                                        <img class="cross-icon" src="icon/cross.png" width="20px">
+                                    </button>
+
+                                    <div class="file">
+                                        <img class="excel-file1" src="icon/excel.png" width="40px">
+                                    </div>
+
+                                    <div class="file-info">
+                                        <p class="file-name">
+                                            CAT201_Assignment.xlsx
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item">
+                                <div class="file-border selected">
 
                                     <button class="delete-file-icon">
                                         <img class="cross-icon" src="icon/cross.png" width="20px">
@@ -105,32 +122,48 @@
 
 
                 <div class="right-section" id="sidebar" style="display: none">
-                    <img class="excel-file1" src="icon/excel.png" width="60px">
+                    <img class="excel-file1" src="icon/excel.png" width="60px" id="sidebar-excel" style="display: none;">
+                    <img class="excel-file1" src="icon/csv1.png" width="60px" id="sidebar-csv" style="display: none;">
                     <div class="file-info">
-                        <p class="file-name-rs">
-                            CAT201_Assignment.xlsx
+                        <p class="file-name-rs" id="filename-sidebar">
+                            No file selected!
+                            <br/>
+                            <br/>
+                            You can drag and drop more file at the left.
                         </p>
                     </div>
 
-                    <div class="convert-info">
-                        <button class="convert-button">
-                            CONVERT TO .CSV
-                            <img class="arrowcircle-icon" src="icon/arrowcircle.png" width="14px">
+                    <div class="convert-info" id="convert-single" style="display: none;">
+                        <button class="convert-button" id="convert-button-id" onclick="convertCSV()">
+                            <span id="convert-text" style="display: block;">
+                                <span>CONVERT TO .CSV</span>
+                                <img class="arrowcircle-icon" src="icon/arrowcircle.png" width="14px">
+                            </span>
+                            <span class="converting" style="display: none;">
+                                <i class="fa-solid fa-circle-notch loading rotating"></i>
+                                <span>CONVERTING...</span>
+                            </span>
                         </button>
                     </div>
 
-                    <div class="download">
-                        <button class="download-button">
-                                <i class="fa-solid fa-download"></i>
-                                DOWNLOAD
-                            </button>
+                    <div class="download" id="download" style="display: none;">
+                        <a href="#" class="download-button" id="download-link">
+                            <i class="fa-solid fa-download"></i>
+                            DOWNLOAD
+                        </a>
                     </div>
 
 
-                    <div class="convert-info">
-                        <button class="convert-button">
-                            CONVERT ALL
-                            <img class="arrowcircle-icon" src="icon/arrowcircle.png" width="14px">
+                    <div class="convert-info" id="convert-all">
+                        <button class="convert-button convert-all-button" id="convert-all-button-id" onclick="convertAll()">
+                            <span id="convert-all-text" style="display: block;">
+                                CONVERT ALL
+                                <img class="arrowcircle-icon" src="icon/arrowcircle.png" width="14px">
+                            </span>
+                            <span id="converting-all" class="converting" style="display: none;">
+                                <i class="fa-solid fa-circle-notch loading rotating"></i>
+                                CONVERTING... <span id="convert-all-progress"></span>
+                            </span>
                         </button>
                     </div>
                 </div>

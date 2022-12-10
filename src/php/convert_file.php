@@ -1,11 +1,16 @@
 <?php
 
-// Get query string
-$file = $_GET['file'];
 
-// Get file name
-$file_name = explode('.', $file)[0];
+if (isset($_POST['file'])) {
 
-$output = var_dump(shell_exec("java -classpath \"../lib/*\" ../ExcelToCSV.java \"../excel/$file\" \"../csv/$file_name.csv\" 2>&1"));
+    $file = $_POST['file'];
+    $file_name = explode('.', $file)[0];
+    
+    $output = var_dump(shell_exec("java -classpath \"../lib/*\" ../ExcelToCSV.java \"../excel/$file\" \"../csv/$file_name.csv\" 2>&1"));
+    
+    unlink("../excel/$file");
+    echo $output;
 
-echo $output;
+} else {
+    echo "File not found";
+}

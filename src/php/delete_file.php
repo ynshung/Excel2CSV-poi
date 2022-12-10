@@ -1,20 +1,18 @@
 <?php
 
-// Get query string, path and file
-$file = $_GET['file'];
+if (isset($_POST['file'])) {
+    // Check for both csv and excel files
+    $file = $_POST['file'];
+    $csv_file = "../csv/$file";
+    $excel_file = "../excel/$file";
 
-// Delete file from excel folder
-// Check if file exists
-if (file_exists("../excel/$file")) {
-    unlink("../excel/$file");
-
-    // Delete file from csv folder
-    $file_name = explode('.', $file)[0];
-
-    if (file_exists("../csv/$file_name.csv")) {
-        unlink("../csv/$file_name.csv");
+    if (file_exists($csv_file)) {
+        unlink($csv_file);
+    } else if (file_exists($excel_file)) {
+        unlink($excel_file);
     }
-} else {
-    echo "File does not exist";
-}
 
+    echo "File deleted successfully";
+} else {
+    echo "File not found";
+}
