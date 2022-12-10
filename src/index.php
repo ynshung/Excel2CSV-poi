@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CAT201 Assignment 1</title>
 
-    <link href="https://fonts.cdnfonts.com/css/bitsumishi" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@200;300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="styles/style.css" /> -->
     <link rel="stylesheet" href="styles/home-page.css">
+    <link rel="stylesheet" href="styles/upload.css">
 
     <script src="https://kit.fontawesome.com/2673427424.js" crossorigin="anonymous"></script>
 </head>
@@ -31,20 +31,34 @@
         </div>
     </div>
 
-    <!-- <div id="container">
-            <h1>Excel to CSV Converter</h1>
-    
-            <div id="files-container"></div>
-            <br/>
-            
-            <form method="post" enctype="multipart/form-data" id="upload-form">
-                <label for="file">Select one or more Excel file(s) to upload:</label><br/>
-                <input type="file" name="files[]" id="file" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" multiple />
-                <input type="submit" name="submit" value="Upload" />
-            </form>
-        </div> -->
+    <div class="center-border" id="upload">
+        <div class="rectangle">
+            <!-- Drag and drop -->
+            <div class="smallrect" id="drop-area">
+                <div class="rect-info">
+                    <img class="excel-icon" src="icon/excel.png">
+                    <img class="arrow-icon" src="icon/arrow.png">
+                    <img class="csv-icon" src="icon/csv1.png">
+                </div>
 
-    <script src="/js/script.js"></script>
+                <div class="upload-info">
+                    <input type="file" name="files[]" id="file" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" multiple />
+                    <label for="file" class="upload-button">
+                        <img class="file-icon" src="icon/file.png" width="24px">
+                        UPLOAD FILE
+                        <img class="arrowdown-icon" src="icon/arrow-down.png" width="21px">
+                    </label>
+                </div>
+
+                <div class="upload-bottom">
+                    <p class="upload-words">
+                        or drop Excel files here
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script src="/js/upload.js"></script>
 </body>
 
