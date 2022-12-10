@@ -98,6 +98,8 @@
 
 .upload-button:hover {
     box-shadow: 10px 10px 35px rgba(0, 0, 0, 0.3);
+    color: #013220;
+    background-image:linear-gradient(297.76deg, #f5f5f5 100%, #f5f5f5 0%);
 }
 
 .upload-words {
