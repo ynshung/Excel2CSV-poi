@@ -13,6 +13,7 @@ body {
     min-height: 100vh;
     margin: 0;
     overflow-x: hidden;
+    background-color: rgb(0, 70, 67);
 }
 
 .background {
@@ -42,14 +43,51 @@ body {
 
 }
 
-/* .big-circle {
-    display: flex;
-    justify-content: end;
-    height: 228px;
-    width: 228px;
+.circle {
+    position: absolute;
     background-color: rgb(171, 209, 198);
     border-radius: 50%;
-} */
+    overflow: hidden;
+}
+
+.circle-dark {
+    position: absolute;
+    background-color: rgb(0, 110, 105);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#big-circle {
+    height: 10vw;
+    width: 10vw;
+    right: -64px;
+    top: 36px;
+
+}
+
+#small-circle {
+    height: 20px;
+    width: 20px;
+    right: 7vw;
+    top: 4vw;
+}
+
+
+#big-circle-1 {
+    height: 15vw;
+    width: 15vw;
+    left: -50px;
+    bottom: -8vw;
+    z-index: 10;
+}
+
+#small-circle-1 {
+    height: 20px;
+    width: 20px;
+    left: 9vw;
+    bottom: -8vw;
+    z-index: 10;
+}
 
 .second-section {
     background-color: rgb(249, 188, 96);
@@ -76,6 +114,7 @@ body {
 .button {
     display: flex;
     justify-content: center;
+    background-color: rgb(249, 188, 96);
 }
 
 .convert-button {

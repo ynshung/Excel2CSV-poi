@@ -1,10 +1,3 @@
-body {
-    font-family: Blinker;
-    background-color: rgb(249, 188, 96);
-    min-height: 100vh;
-    margin: 0;
-}
-
 .center-border,
 .rectangle,
 .smallrect,
@@ -18,7 +11,10 @@ body {
 }
 
 .center-border {
-    min-height: 100vh;
+    padding-bottom: 10%;
+    padding-top: 10px;
+    background-color: rgb(249, 188, 96);
+    transform: skewY(-4deg);
 }
 
 .rectangle {
@@ -28,6 +24,7 @@ body {
     box-shadow: 10px 10px 35px rgba(0, 0, 0, 0.86);
     border-radius: 6px;
     z-index: 10;
+    transform: skewY(4deg);
 }
 
 .smallrect {
@@ -75,9 +72,14 @@ body {
     padding-right: 15px;
     padding-left: 15px;
     cursor: pointer;
-    gap: 10px;
     transition: box-shadow 0.15s;
     margin-top: 10px;
+}
+
+#upload-file {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .upload-button:hover {

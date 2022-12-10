@@ -16,10 +16,13 @@
 
 <body>
     <div class="background">
+        <span class="circle" id="small-circle"></span>
+        <span class="circle" id="big-circle"></span>
+        <span class="circle-dark" id="small-circle-1"></span>
+        <span class="circle-dark" id="big-circle-1"></span>
         <div class="first-section">
             <p class="excel">EXCEL</p>
             <i class="fa-solid fa-arrow-turn-down fa-inverse"></i>
-            <!-- <span class="big-circle"></span> -->
         </div>
         <div class="second-section">
             <div class="title">
@@ -44,9 +47,11 @@
                 <div class="upload-info">
                     <input type="file" name="files[]" id="file" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" multiple />
                     <label for="file" class="upload-button">
-                        <img class="file-icon" src="icon/file.png" width="24px">
-                        UPLOAD FILE
-                        <img class="arrowdown-icon" src="icon/arrow-down.png" width="21px">
+                        <span id="upload-file">
+                            <img class="file-icon" src="icon/file.png" width="24px">
+                            <span>UPLOAD FILE</span>
+                            <img class="arrowdown-icon" src="icon/arrow-down.png" width="21px">
+                        </span>
                     </label>
                 </div>
 
@@ -58,7 +63,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="/js/upload.js"></script>
 </body>
 
