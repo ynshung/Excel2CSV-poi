@@ -257,9 +257,11 @@ function convertCSV() {
 function convertAll() {
     const fileElements = document.querySelectorAll(".file-border");
     let allConverted = true;
+    let totalExcel = 0;
     fileElements.forEach((fileElement) => {
         if (fileElement.dataset.file.match(/\.(xls|xlsx)$/)) {
             allConverted = false;
+            totalExcel++;
         }
     });
 
@@ -281,7 +283,7 @@ function convertAll() {
 
     // convert-all-progress
     let converted = 0;
-    document.getElementById("convert-all-progress").innerHTML = `0/${fileElements.length}`;
+    document.getElementById("convert-all-progress").innerHTML = `0/${totalExcel}`;
 
     const fetchReq = (fileName) => {
         const formData = new FormData();
@@ -292,7 +294,7 @@ function convertAll() {
             body: formData,
         }).then((response) => {
             converted++;
-            document.getElementById("convert-all-progress").innerHTML = `${converted}/${fileElements.length}`;
+            document.getElementById("convert-all-progress").innerHTML = `${converted}/${totalExcel}`;
 
             if (response.status !== 200) {
                 alert("There was an error converting your file. Please check the console for more information.");
