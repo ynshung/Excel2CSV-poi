@@ -209,7 +209,7 @@ function noFileSelected() {
     document.getElementById("download").style.display = "none";
     document.getElementById("convert-single").style.display = "none";
 
-    document.getElementById("filename-sidebar").innerHTML = "No file selected!";
+    document.getElementById("filename-sidebar").innerHTML = "No file selected!<br/><br/>You can drag and drop more file at the left.";
     document.getElementById("sidebar-excel").style.display = "none";
     document.getElementById("sidebar-csv").style.display = "none";
 }
@@ -222,7 +222,7 @@ function convertCSV() {
     formData.append("file", fileName);
 
     document.getElementById("convert-text").style.display = "none";
-    document.getElementById("converting").style.display = "flex";
+    document.getElementById("converting-id").style.display = "flex";
 
     // Disable button
     document.getElementById("convert-button-id").disabled = true;
@@ -243,7 +243,7 @@ function convertCSV() {
                 if (document.getElementById("filename-sidebar").innerHTML === fileName) {
                     selectFile(newFileName);
                     document.getElementById("convert-text").style.display = "block";
-                    document.getElementById("converting").style.display = "none";
+                    document.getElementById("converting-id").style.display = "none";
                 }
             });
         }
